@@ -1,0 +1,96 @@
+{
+  "telegram": {
+    "bot_token": "YOUR_BOT_TOKEN_HERE",
+    "channel_id": "@your_channel_username"
+  },
+  "stocks": [
+    { "ticker": "ACN", "label": "Accenture" }
+  ],
+  "sites": [
+    {
+      "name": "MSGold - Fortuna 1g",
+      "url": "https://msgold.com.my/product",
+      "method": "playwright",
+      "frequency_hours": 24,
+      "wait_selector": "#ppa6",
+      "wait_js": "() => !document.querySelector('#ppa6 img')",
+      "price_selectors": [
+        "#ppa6"
+      ]
+    },
+    {
+      "name": "Aston & Sons - PAMP Fortuna 1g",
+      "url": "https://www.astonandsons.com.my/product/pamp-fortuna-1-gram-gold-bar/",
+      "method": "requests",
+      "frequency_hours": 24,
+      "price_selectors": [
+        ".woocommerce-Price-amount bdi",
+        ".price .woocommerce-Price-amount",
+        "[itemprop='price']",
+        ".amount"
+      ]
+    },
+    {
+      "name": "LITZ - PAMP 1g",
+      "url": "https://litz.store/item/1-gram-LITZ-PAMP-Suisse-Gold-Bar---Lady-/5138972138405888",
+      "method": "requests",
+      "frequency_hours": 24,
+      "price_selectors": [
+        "meta[property='product:price:amount']",
+        ".product-price",
+        ".item-price",
+        "[class*='price']",
+        ".price"
+      ]
+    },
+    {
+      "name": "Aston & Sons - Argor Heraeus 1g",
+      "url": "https://www.astonandsons.com.my/product/argor-heraeus-1-gram-gold-bar-999-9-fine/",
+      "method": "requests",
+      "frequency_hours": 24,
+      "price_selectors": [
+        ".woocommerce-Price-amount bdi",
+        ".price .woocommerce-Price-amount",
+        "[itemprop='price']",
+        ".amount"
+      ]
+    },
+    {
+      "name": "WahChan - As Salam 1g",
+      "url": "https://wahchan.com.my/product/999-9-fine-gold-bar-as-salam-1g/",
+      "method": "requests",
+      "frequency_hours": 24,
+      "price_selectors": [
+        ".woocommerce-Price-amount bdi",
+        ".price .woocommerce-Price-amount",
+        "[itemprop='price']",
+        ".amount"
+      ]
+    },
+    {
+      "name": "MyBullionTrade - PAMP 1g",
+      "url": "https://mybulliontrade.com/buy-gold-silver/1-gram-pamp-suisse-lady-fortuna-veriscan-gold-bar/",
+      "method": "requests",
+      "frequency_hours": 24,
+      "price_selectors": [
+        ".woocommerce-Price-amount bdi",
+        ".price .woocommerce-Price-amount",
+        "[itemprop='price']",
+        ".amount",
+        ".product-price"
+      ]
+    },
+    {
+      "name": "SilverBullion MY - PAMP 1g",
+      "url": "https://www.silverbullion.com.my/Product/Detail/Gold_PAMP_Suisse_Fortuna_Bar_1_Gram",
+      "method": "requests",
+      "frequency_hours": 1,
+      "price_selectors": [
+        ".price",
+        ".product-price",
+        "[itemprop='price']",
+        "[class*='price']"
+      ]
+    }
+  ]
+}
