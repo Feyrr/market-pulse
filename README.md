@@ -1,7 +1,7 @@
 # Gold & Stock Alert Bot
 
 Sends scheduled updates to a Telegram channel with:
-- Accenture (ACN) stock price and any other stocks you configure
+- Stock prices for tickers you configure
 - Gold spot price in USD/oz, MYR/oz, and MYR/1g
 - Live dealer prices for PAMP/999 1g gold bars from Malaysian websites
 
@@ -84,8 +84,9 @@ python main.py
 
 ### 1. Push code to GitHub
 
-```powershell
-cd path\to\MarketPulse
+First, create a new empty repo on GitHub (do not tick "Add README"), then run:
+
+```bash
 git init
 git add .
 git commit -m "Initial commit"
@@ -94,9 +95,18 @@ git remote add origin https://github.com/YOUR_USERNAME/market-pulse.git
 git push -u origin main
 ```
 
-After pushing, log out of the Git session:
-```powershell
-git credential-manager github logout
+When prompted for password, use a **Personal Access Token (PAT)** - not your GitHub password. GitHub no longer accepts passwords for git operations.
+
+To generate a PAT: GitHub > profile picture > **Settings > Developer settings > Personal access tokens > Tokens (classic) > Generate new token (classic)**. Tick the **repo** and **workflow** scopes.
+
+**Note for WSL users:** Run `git add .` and `git commit` from WSL, but if `git add .` hangs (common on `/mnt/c/` NTFS mount), switch to PowerShell on Windows to run the git commands instead.
+
+### Pushing future changes
+
+```bash
+git add .
+git commit -m "Your message here"
+git push
 ```
 
 ### 2. Add secrets in GitHub
@@ -144,7 +154,6 @@ Edit the `"stocks"` array in `config.json`. The `ticker` is the Yahoo Finance sy
 
 ```json
 "stocks": [
-  { "ticker": "ACN",     "label": "Accenture" },
   { "ticker": "AAPL",    "label": "Apple" },
   { "ticker": "MSFT",    "label": "Microsoft" },
   { "ticker": "1155.KL", "label": "Maybank" }
@@ -243,7 +252,6 @@ Gold & Market Update
 01 Jul 2026, 14:00 MYT
 
 Stocks
-  Accenture (ACN): $320.50  -1.20 (-0.37%)
   Apple (AAPL): $195.80  +0.50 (+0.26%)
 
 Gold Spot

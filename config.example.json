@@ -4,7 +4,17 @@
     "channel_id": "@your_channel_username"
   },
   "stocks": [
-    { "ticker": "ACN", "label": "Accenture" }
+    { "ticker": "ACN", "label": "Accenture" },
+    { "ticker": "AAPL", "label": "Apple" },
+    { "ticker": "INTC", "label": "Intel" },
+    { "ticker": "NVDA", "label": "Nvidia" },
+    { "ticker": "SONY", "label": "Sony" },
+    { "ticker": "5347.KL", "label": "TNB" },
+    { "ticker": "5285.KL", "label": "SDG" },
+    { "ticker": "4863.KL", "label": "TM" },
+    { "ticker": "1155.KL", "label": "Maybank" },
+    { "ticker": "4197.KL", "label": "Sime" }
+
   ],
   "sites": [
     {
