@@ -265,8 +265,10 @@ def build_message(stocks, gold, sites):
     lines.append("*Stocks*")
     for s in stocks:
         if s["price"] is not None:
+            currency = "RM" if s["ticker"].endswith(".KL") else "$"
+            price_str = f"RM {s['price']:.2f}" if currency == "RM" else f"${s['price']:.2f}"
             lines.append(
-                f"  {s['label']} ({s['ticker']}): `${s['price']:.2f}`  "
+                f"  {s['label']} ({s['ticker']}): `{price_str}`  "
                 f"{sign(s['change'])}{s['change']:.2f} ({sign(s['pct'])}{s['pct']:.2f}%)"
             )
         else:
