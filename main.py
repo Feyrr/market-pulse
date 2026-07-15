@@ -266,7 +266,7 @@ def build_message(stocks, gold, sites):
     for s in stocks:
         if s["price"] is not None:
             currency = "RM" if s["ticker"].endswith(".KL") else "$"
-            price_str = f"RM {s['price']:.2f}" if currency == "RM" else f"${s['price']:.2f}"
+            price_str = f"RM{s['price']:.2f}" if currency == "RM" else f"${s['price']:.2f}"
             lines.append(
                 f"  {s['label']} ({s['ticker']}): `{price_str}`  "
                 f"{sign(s['change'])}{s['change']:.2f} ({sign(s['pct'])}{s['pct']:.2f}%)"
@@ -281,8 +281,8 @@ def build_message(stocks, gold, sites):
         lines += [
             "*Gold Spot*",
             f"  USD/oz  : `${gold['usd_per_oz']:,.2f}`",
-            f"  MYR/oz  : `RM {gold['myr_per_oz']:,.2f}`",
-            f"  MYR/1g  : `RM {gold['myr_per_gram']:.2f}`",
+            f"  MYR/oz  : `RM{gold['myr_per_oz']:,.2f}`",
+            f"  MYR/1g  : `RM{gold['myr_per_gram']:.2f}`",
             f"  USD/MYR : `{gold['usdmyr']:.4f}`",
         ]
     else:
